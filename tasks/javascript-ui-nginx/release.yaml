@@ -22,7 +22,6 @@ spec:
               optional: true
           name: ""
           resources:
-            limits: {}
             requests:
               cpu: 400m
               memory: 512Mi
@@ -50,11 +49,7 @@ spec:
             jx-release-version --tag > VERSION
         - image: ghcr.io/jenkins-x/jx-boot:3.2.339
           name: jx-variables
-          resources:
-            # set requests for the pod here
-            requests:
-              cpu: 400m
-              memory: 512Mi
+          resources: {}
           script: |
             #!/usr/bin/env sh
             jx gitops variables
